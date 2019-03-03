@@ -1,0 +1,44 @@
+{
+  "name": "storemanager-frontend",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.config.js --hot --open"
+  },
+  "repository": "git@github.com:armstrongsouljah/storemanager-frontend.git",
+  "author": "Muhwezi Armstrong <armstrongsouljah@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-loader": "7",
+    "css-loader": "^2.1.0",
+    "less-loader": "^4.1.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "style-loader": "^0.23.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "html-webpack-plugin": "^3.2.0",
+    "less": "^3.9.0",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react",
+      "stage-0"
+    ],
+    "plugins": [
+      "transform-object-rest-spread"
+    ]
+  }
+}
