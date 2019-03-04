@@ -2,4 +2,5 @@ import React from "react";
 import { render, } from "react-dom";
 import Routes from "./routes/index";
 
-render(<Routes />, document.querySelector("#root"));
+const rootElem = document.querySelector("#root")
+render(<Routes/>, rootElem);
