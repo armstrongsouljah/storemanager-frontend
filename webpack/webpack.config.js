@@ -3,16 +3,15 @@ var path = require("path");
 var HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
-var parentDir = path.join(__dirname, "../src/");
+var parentDir = path.join(__dirname, "../");
 
 module.exports = {
     entry: [
-        path.join(parentDir, "index.js"),
+        path.join(parentDir, "src/index.js"),
     ],
     resolve: {
         extensions: [".jsx", ".js",],
     },
-    mode: "development",
     module: {
         rules: [{
             test: /\.(js|jsx)$/,

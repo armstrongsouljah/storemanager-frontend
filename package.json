@@ -2,26 +2,37 @@
   "name": "storemanager-frontend",
   "version": "1.0.0",
   "main": "index.js",
+  "engines": {
+    "node": "10.15.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/webpack-dev-server --config ./webpack/webpack.config.js --hot --open",
-    "lint:fix": "eslint . --ignore-path .gitignore --fix"
+    "start": "webpack-dev-server --config ./webpack/webpack.config.js --hot --open",
+    "build": "webpack --mode production --config ./webpack/webpack.config.js --open",
+    "lint:fix": "eslint . --ignore-path .gitignore --fix",
+    "heroku-prebuild": "npm i yarn; yarn install",
+    "heroku-postbuild": "yarn build"
   },
   "repository": "git@github.com:armstrongsouljah/storemanager-frontend.git",
   "author": "Muhwezi Armstrong <armstrongsouljah@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "babel-loader": "7",
     "css-loader": "^2.1.0",
+    "dotenv": "^6.2.0",
+    "dotenv-webpack": "^1.7.0",
+    "express": "^4.16.4",
     "less-loader": "^4.1.0",
+    "path": "^0.12.7",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-router-dom": "^4.3.1",
-    "style-loader": "^0.23.1"
+    "style-loader": "^0.23.1",
+    "yarn": "^1.13.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
+    "babel-loader": "7",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
