@@ -1,6 +1,5 @@
-import React from 'react';
-import { render } from 'react-dom';
-import App from './views/App';
+import React from "react";
+import { render, } from "react-dom";
+import Routes from "./routes/index";
 
-
-render(<App />, document.querySelector('#root'));
+render(<Routes />, document.querySelector("#root"));
