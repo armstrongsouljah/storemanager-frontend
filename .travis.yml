@@ -1,15 +1,13 @@
 anguage: node_js
 
 node_js:
-  - "stable"
+  - "11.10.1"
 
 cache:
   directories:
     - node_modules
 
 install:
-  - nvm install node
-  - node -v
   - npm i yarn
   - yarn  --ignore-engines
 
