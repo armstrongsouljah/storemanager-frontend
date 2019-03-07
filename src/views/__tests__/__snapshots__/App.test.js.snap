@@ -1,3 +1,26 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App renders without crashing 1`] = `ShallowWrapper {}`;
+exports[`App renders without crashing 1`] = `
+Connect {
+  "context": undefined,
+  "indirectRenderWrappedComponent": [Function],
+  "props": Object {
+    "loginAction": [MockFunction],
+    "loginState": Object {
+      "errors": null,
+      "successMessage": null,
+      "token": null,
+      "userRole": null,
+    },
+  },
+  "refs": Object {},
+  "selectChildElement": [Function],
+  "selectDerivedProps": [Function],
+  "updater": Object {
+    "enqueueForceUpdate": [Function],
+    "enqueueReplaceState": [Function],
+    "enqueueSetState": [Function],
+    "isMounted": [Function],
+  },
+}
+`;

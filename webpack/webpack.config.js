@@ -1,9 +1,10 @@
-var webpack = require("webpack");
-var path = require("path");
-var HtmlWebpackPlugin = require("html-webpack-plugin");
+/* eslint-disable comma-spacing */
+const Dotenv = require("dotenv-webpack");
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 
-var parentDir = path.join(__dirname, "../");
+const parentDir = path.join(__dirname, "../");
 
 module.exports = {
     entry: [
@@ -17,9 +18,9 @@ module.exports = {
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
             loader: "babel-loader",
-        },{
-            test: /\.less$/,
-            loaders: ["style-loader", "css-loder", "less-loader",],
+        }, {
+            test: /\.css$/,
+            use: ["style-loader", "css-loader", "less-loader",],
         },
         ],
     },
@@ -28,9 +29,13 @@ module.exports = {
             template: "./src/index.html",
             filename: "./index.html",
         }),
+        new Dotenv({
+            path: path.join(__dirname, "../.env"),
+            systemvars: true,
+        }),
     ],
     output: {
-        path: parentDir + "/dist",
+        path: `${parentDir}/dist`,
         publicPath: "/",
         filename: "bundle.js",
     },
