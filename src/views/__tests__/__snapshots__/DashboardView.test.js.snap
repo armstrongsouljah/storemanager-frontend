@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<DashboardView/> should render without crashing 1`] = `
+Connect {
+  "context": undefined,
+  "indirectRenderWrappedComponent": [Function],
+  "props": Object {
+    "getProducts": [MockFunction],
+    "products": Object {
+      "length": 2,
+    },
+  },
+  "refs": Object {},
+  "selectChildElement": [Function],
+  "selectDerivedProps": [Function],
+  "updater": Object {
+    "enqueueForceUpdate": [Function],
+    "enqueueReplaceState": [Function],
+    "enqueueSetState": [Function],
+    "isMounted": [Function],
+  },
+}
+`;

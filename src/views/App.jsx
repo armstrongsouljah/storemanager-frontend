@@ -34,17 +34,22 @@ export class App extends Component {
     onChange = (event) => {
         event.preventDefault();
         this.setState({ [event.target.id]: event.target.value, });
+        this.setState({ loading:false, })
+    }
+
+    handleLoading = () => {
+        this.setState({ loading: true })
     }
 
     render() {
-        const { redirect, } = this.state;
+        const { redirect, loading,  } = this.state;
         const { errors, } = this.props.loginState;
         if (redirect) {
             return (
                 <Redirect to="/dashboard" />
             );
         } return (
-            <LoginForm onSubmit={this.handleSubmit} onChange={this.onChange} error={errors} />
+            <LoginForm onSubmit={this.handleSubmit} onChange={this.onChange} error={errors} onLoading={ loading} />
         );
     }
 }

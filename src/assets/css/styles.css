@@ -3,10 +3,9 @@
     font-family: 'Raleway', sans-serif;
     font-family: 'Montserrat', sans-serif;
 }
-/* body{
-    background: url('https://picsum.photos/200/300/?blur');
-    background-size:cover;
-} */
+body{
+   background: #00bcd4;
+}
 .login-container{
     margin-top: 184px;
 }
