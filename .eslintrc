@@ -24,6 +24,8 @@
         "linebreak-style": ["error", "unix"],
         "quotes": ["error", "double"],
         "comma-dangle": ["error", "always"],
+        "array-bracket-spacing": ["error", "never"],
+        "comma-spacing": ["error", "never"],
         "no-console": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
     },
