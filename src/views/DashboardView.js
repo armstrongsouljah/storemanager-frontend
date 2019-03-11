@@ -9,11 +9,16 @@ import { connect, } from "react-redux";
 import Dashboard from "../components/Dashboard";
 import Navigation from "../components/Navigation";
 import getProducts from "../actions/getProducts";
+import CornerMenu from "../components/CornerMenu";
+import UserAddView from "./UserAddView";
+
 
 
 export class DashboardView extends Component {
     state = {
       redirect: false,
+      open: false,
+      loading:true, 
     }
     componentWillMount() {
       const { getProducts, } = this.props;
@@ -22,7 +27,6 @@ export class DashboardView extends Component {
 
     handleLogout = (event) => {
       event.preventDefault();
-      console.log("logggngngngngn")
       const token = localStorage.getItem("token");
       if(token){
        if(confirm("Are you sure you want to logout?")){
@@ -31,11 +35,19 @@ export class DashboardView extends Component {
        }
       }
     }
+    onCloseModal = () => {
+      this.setState({ open: false})
+    }
+
+    showRegisterForm = (event) => {
+      event.preventDefault();
+      this.setState({ open: true });
+    }
 
     render() {
         const token = localStorage.getItem("token");
         const { products, } = this.props;
-        const {redirect} = this.state;
+        const {redirect, open, loading, } = this.state;
 
         if (!token) {
             return (
@@ -47,12 +59,15 @@ export class DashboardView extends Component {
             <Redirect to="/" />
           );
         }
+
         return (
           <div>
             <Navigation onLogout={this.handleLogout}/>
             <div className="row">
               <Dashboard products={products} />
             </div>
+            <CornerMenu onRegister={this.showRegisterForm} />
+            <UserAddView open={open} onClose={this.onCloseModal} />
 
           </div>
 
@@ -62,6 +77,7 @@ export class DashboardView extends Component {
 
 const mapStateToProps = state => ({
     products: state.productListReducer.products,
+
 });
 
 

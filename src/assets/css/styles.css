@@ -9,3 +9,9 @@ body{
 .login-container{
     margin-top: 184px;
 }
+.signup-container{
+    padding: 85px;
+}
+.signup-form{
+    padding: 85px;
+}
