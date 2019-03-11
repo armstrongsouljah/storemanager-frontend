@@ -46,6 +46,7 @@ export class DashboardView extends Component {
 
     render() {
         const token = localStorage.getItem("token");
+        const role = localStorage.getItem("userRole");
         const { products, } = this.props;
         const {redirect, open, loading, } = this.state;
 
@@ -66,9 +67,11 @@ export class DashboardView extends Component {
             <div className="row">
               <Dashboard products={products} />
             </div>
-            <CornerMenu onRegister={this.showRegisterForm} />
+            {
+              role === 'admin' ? 
+              <CornerMenu onRegister={this.showRegisterForm} />:''
+            }
             <UserAddView open={open} onClose={this.onCloseModal} />
-
           </div>
 
         );
