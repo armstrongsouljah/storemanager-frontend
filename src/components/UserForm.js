@@ -39,7 +39,7 @@ Save
                     </button>
                     <br/> <br/>
                     <span className="red-text">{props.errors? props.errors: ''} </span>
-                    <span className="teal-text">{props.successMessage ? props.errors: ''} </span>
+                    <span className="teal-text">{props.successMessage ? props.successMessage: ''} </span>
                 </form>
             </div>
 );
