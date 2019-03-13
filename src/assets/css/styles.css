@@ -15,3 +15,6 @@ body{
 .signup-form{
     padding: 85px;
 }
+.uppercase-first{
+    text-transform: capitalize;
+}
